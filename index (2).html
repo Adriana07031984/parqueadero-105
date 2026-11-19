@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vehículo autorizado · Torre 4 Apto 803 · Santa Catalina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="carro.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --negro:#161618; --negro2:#202024; --linea:#2e2e33;
+    --blanco:#f7f7f5; --gris:#a7a7ad;
+    --naranja:#f0841c; --verde:#56a03a; --amarillo:#f2b91b; --cafe:#6b4423;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Poppins,system-ui,sans-serif;background:var(--negro);color:var(--blanco);
+       min-height:100vh;display:flex;justify-content:center;padding:18px 14px 28px}
+  .tarjeta{width:100%;max-width:420px}
+  header{display:flex;flex-direction:column;align-items:center;gap:10px;padding:8px 0 6px}
+  .logo{background:var(--blanco);border-radius:16px;padding:10px;display:grid;
+        grid-template-columns:34px 34px;gap:4px}
+  .logo span{width:34px;height:34px;border-radius:6px;display:block;position:relative}
+  .logo span:nth-child(2),.logo span:nth-child(4){transform:translateY(5px)}
+  .logo span::after{content:"";position:absolute;inset:9px 6px;border-radius:50% 0;
+        background:rgba(0,0,0,.14);transform:rotate(-40deg)}
+  .a{background:var(--amarillo)}.v{background:var(--verde)}.c{background:var(--cafe)}.n{background:var(--naranja)}
+  .nombre{text-align:center;line-height:1.1}
+  .nombre b{font-size:22px;font-weight:700;letter-spacing:.3px}
+  .nombre small{display:block;color:var(--naranja);font-size:11px;letter-spacing:5px;margin-top:4px;font-weight:500}
+  .onda{height:18px;margin:6px -14px 10px;background:
+    radial-gradient(60% 120% at 50% -40%, transparent 62%, var(--naranja) 63% 72%, transparent 73%),
+    radial-gradient(60% 120% at 50% -10%, transparent 62%, var(--verde) 63% 67%, transparent 68%)}
+  .estado{display:flex;align-items:center;justify-content:center;gap:8px;background:rgba(86,160,58,.14);
+          border:1.5px solid var(--verde);color:#8fd36f;border-radius:999px;padding:8px 16px;
+          font-weight:600;font-size:14px;width:max-content;margin:0 auto 16px}
+  .estado i{width:9px;height:9px;border-radius:50%;background:#7bd34f;box-shadow:0 0 0 4px rgba(123,211,79,.2)}
+  .foto{background:linear-gradient(180deg,#2a2a30 0%,#1d1d21 100%);border:1px solid var(--linea);
+        border-radius:20px;overflow:hidden;position:relative}
+  .foto img{display:block;width:100%;height:auto}
+  .foto .etq{position:absolute;left:12px;top:12px;font-size:10px;letter-spacing:1px;color:var(--gris);
+        background:rgba(0,0,0,.45);padding:3px 8px;border-radius:6px}
+  .placa{margin:-26px auto 0;position:relative;width:200px;background:var(--amarillo);color:#111;
+         border:3px solid #111;border-radius:10px;text-align:center;padding:4px 0 3px;
+         box-shadow:0 8px 20px rgba(0,0,0,.45)}
+  .placa b{font-size:34px;font-weight:800;letter-spacing:3px;line-height:1.05;display:block}
+  .placa small{font-size:10px;font-weight:600;letter-spacing:2px}
+  .bloque{background:var(--negro2);border:1px solid var(--linea);border-radius:18px;padding:6px 16px;margin-top:16px}
+  .fila{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--linea)}
+  .fila:last-child{border-bottom:0}
+  .fila span{color:var(--gris);font-size:13px}
+  .fila b{font-weight:600;font-size:15px;text-align:right}
+  .fila b.pend{color:var(--gris);font-weight:500;font-style:italic}
+  .resaltes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px}
+  .res{background:var(--negro2);border:1px solid var(--linea);border-radius:16px;padding:12px 6px;text-align:center}
+  .res span{display:block;color:var(--gris);font-size:11px}
+  .res b{display:block;font-size:24px;font-weight:700;line-height:1.2}
+  .res.p b{color:#fff}
+  .res .pico{display:inline-flex;width:24px;height:24px;border-radius:6px;background:var(--verde);
+        color:var(--negro);font-weight:800;font-size:16px;align-items:center;justify-content:center;margin-right:6px;vertical-align:3px}
+  .aviso{margin-top:16px;font-size:12px;color:var(--gris);text-align:center;line-height:1.5}
+  .ejemplo{margin-top:14px;text-align:center;font-size:11px;color:#77777d;border:1px dashed #3a3a40;border-radius:12px;padding:8px}
+  .porteria{display:block;margin-top:16px;background:var(--naranja);color:var(--negro);text-decoration:none;
+        text-align:center;font-weight:700;border-radius:14px;padding:14px;font-size:15px}
+  .porteria small{display:block;font-weight:500;font-size:12px}
+</style>
+</head>
+<body>
+<main class="tarjeta">
+  <header>
+    <div class="logo" aria-label="Logo Santa Catalina"><span class="a"></span><span class="v"></span><span class="c"></span><span class="n"></span></div>
+    <div class="nombre"><b>SANTA CATALINA</b><small>CLUB HOUSE</small></div>
+  </header>
+  <div class="onda" aria-hidden="true"></div>
+
+  <div class="estado"><i></i> Vehículo autorizado</div>
+
+  <section class="foto" aria-label="Foto del vehículo">
+    <img src="carro.jpg" width="720" height="448" fetchpriority="high" decoding="async" alt="Ford Escape azul, placa IWZ 434, visto de frente">
+  </section>
+
+  <div class="placa"><b>IWZ·434</b><small>BOGOTÁ D.C.</small></div>
+
+  <div class="resaltes">
+    <div class="res"><span>Torre</span><b>4</b></div>
+    <div class="res"><span>Apartamento</span><b>803</b></div>
+    <div class="res p"><span>Parqueadero</span><b><span class="pico">P</span>105</b></div>
+  </div>
+
+  <section class="bloque" aria-label="Datos del vehículo">
+    <div class="fila"><span>Propietario</span><b>Adriana Rincón</b></div>
+    <div class="fila"><span>Tipo</span><b>Camioneta</b></div>
+    <div class="fila"><span>Marca / línea</span><b>Ford Escape</b></div>
+    <div class="fila"><span>Modelo</span><b>2016</b></div>
+    <div class="fila"><span>Color</span><b>Azul</b></div>
+    <div class="fila"><span>Placa</span><b>IWZ 434</b></div>
+    <div class="fila"><span>Vigencia del registro</span><b>31/12/2027</b></div>
+  </section>
+
+  <a class="porteria" href="tel:+576019166000">Comunicarse con portería<small>Tel. 601 916 6000</small></a>
+
+  <p class="aviso">Este vehículo está registrado en la administración del Conjunto Residencial Santa Catalina Club House para el parqueadero asignado.</p>
+  <p class="ejemplo">Vigencia del registro: dato de ejemplo por confirmar.</p>
+</main>
+</body>
+</html>
